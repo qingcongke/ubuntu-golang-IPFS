@@ -16,7 +16,7 @@ ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
-Run echo "Install IPFS" && \
+RUN echo "Install IPFS" && \
     wget --no-check-certificate -P /tmp https://dist.ipfs.io/go-ipfs/v0.4.21/go-ipfs_v0.4.21_linux-amd64.tar.gz && \
     tar -C /tmp -xzf /tmp/go-ipfs_v0.4.21_linux-amd64.tar.gz && \
     cd /tmp/go-ipfs && ./install.sh && \
